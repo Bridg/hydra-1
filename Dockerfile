@@ -10,6 +10,6 @@ RUN glide install
 ADD . .
 RUN go install .
 
-ENTRYPOINT /go/bin/hydra host
+ENTRYPOINT /go/bin/hydra host --dangerous-force-http
 
 EXPOSE 4444
