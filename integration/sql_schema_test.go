@@ -8,7 +8,7 @@ import (
 	"github.com/ory-am/hydra/policy"
 	"github.com/ory-am/hydra/jwk"
 	"github.com/ory-am/hydra/oauth2"
-	"github.com/ory-am/ladon"
+	"github.com/Bridg/ladon"
 	"github.com/ory-am/hydra/warden/group"
 )
 
