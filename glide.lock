@@ -132,8 +132,8 @@ imports:
   - storage
   - token/hmac
   - token/jwt
-- name: github.com/Bridg/ladon
-  version: b457d09f671c767a58142bc34c4259b860c2a47b
+- name: github.com/ory-am/ladon
+  version: 41c6b8e269024bf10761644b8695a54a4b300e41
 - name: github.com/pborman/uuid
   version: a97ce2ca70fa5a848076093f05e639a89ca34d06
 - name: github.com/pelletier/go-buffruneio
