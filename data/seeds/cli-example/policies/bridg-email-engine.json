@@ -1,0 +1,14 @@
+{
+  "id": "bridg_email_engine",
+  "description": "Give bridg's email engine access to Bridg's resources.",
+  "subjects": [
+    "bridg-email-engine"
+  ],
+  "effect": "allow",
+  "resources": [
+    "rn:bridg:accounts:<[A-z0-9_-]+:brands:[A-z0-9_-]+:campaign-messaging(:.+)?>"
+  ],
+  "actions": [
+    "create", "delete", "read"
+  ]
+}
