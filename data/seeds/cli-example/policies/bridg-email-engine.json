@@ -9,6 +9,6 @@
     "rn:bridg:accounts:<[A-z0-9_-]+:brands:[A-z0-9_-]+:campaign-messaging(:.+)?>"
   ],
   "actions": [
-    "create", "delete", "read"
+    "create", "read", "update", "delete"
   ]
 }
