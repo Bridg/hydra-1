@@ -7,7 +7,8 @@
   "effect": "allow",
   "resources": [
     "rn:bridg:<(accounts:[0-9A-z_-]+:brands:[0-9A-z_-]+:)?(analytics|campaigns|integrations)(:.+)?>",
-    "rn:bridg:<accounts:[0-9A-z_-]+:brands:[0-9A-z_-]+>"
+    "rn:bridg:<accounts:[0-9A-z_-]+:brands:[0-9A-z_-]+>",
+    "rn:bridg:<(accounts:[0-9A-z_-]+:brands:[0-9A-z_-]+:)?campaign-messaging(.+)?>"
   ],
   "actions": [
     "create", "read", "update", "delete"
