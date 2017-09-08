@@ -6,7 +6,8 @@
   ],
   "effect": "allow",
   "resources": [
-    "rn:bridg:scheduler:<.*>"
+    "rn:bridg:scheduler:schedule",
+    "rn:bridg:<(accounts:[0-9A-z_-]+:brands:[0-9A-z_-]+:)?campaigns(.+)?>"
   ],
   "actions": [
     "create", "delete", "read", "update"
