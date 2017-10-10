@@ -218,6 +218,22 @@ describe('The "account-admin" role (act_1 member)', () => {
         testWardenResponse('read', 'rn:bridg:accounts:act_2:brands:brd_2:insights', c2, false, done);
       });
 
+      it('is allowed access to "/brd_1/profile-collections"', (done) => {
+        testWardenResponse('read', 'rn:bridg:accounts:act_1:brands:brd_1:profile-collections', c1, true, done);
+      });
+
+      it('is NOT allowed access to "/brd_2/profile-collections"', (done) => {
+        testWardenResponse('read', 'rn:bridg:accounts:act_2:brands:brd_2:profile-collections', c2, false, done);
+      });
+
+      it('is allowed access to "/brd_1/profile-collections/col_1"', (done) => {
+        testWardenResponse('read', 'rn:bridg:accounts:act_1:brands:brd_1:profile-collections:col_1', c1, true, done);
+      });
+
+      it('is NOT allowed access to "/brd_2/profile-collections/col_2"', (done) => {
+        testWardenResponse('read', 'rn:bridg:accounts:act_2:brands:brd_2:profile-collections:col_2', c2, false, done);
+      });
+
       it('is NOT allowed access to "/brd_1/reveal-jobs"', (done) => {
         testWardenResponse('read', 'rn:bridg:accounts:act_1:brands:brd_1:reveal-jobs', c1, false, done);
       });
@@ -316,6 +332,12 @@ describe('The "account-admin" role (act_1 member)', () => {
 
       it('is NOT allowed access to "/pol_1"', (done) => {
         testWardenResponse('read', 'rn:hydra:policies:pol_1', null, false, done);
+      });
+    });
+
+    describe('context "/profile-collections"', () => {
+      it('is NOT allowed access to "/profile-collections"', (done) => {
+        testWardenResponse('read', 'rn:bridg:profile-collections', null, false, done);
       });
     });
 
@@ -570,6 +592,14 @@ describe('The "account-admin" role (act_1 member)', () => {
 
       it('is allowed access to "/brd_1/search/customer-profile/_count"', (done) => {
         testWardenResponse('create', 'rn:bridg:accounts:act_1:brands:brd_1:search:customer-profile:_count', c1, true, done);
+      });
+
+      it('is allowed access to "/brd_1/profile-collections"', (done) => {
+        testWardenResponse('create', 'rn:bridg:accounts:act_1:brands:brd_1:profile-collections', c1, true, done);
+      });
+
+      it('is NOT allowed access to "/brd_2/profile-collections"', (done) => {
+        testWardenResponse('create', 'rn:bridg:accounts:act_2:brands:brd_2:profile-collections', c2, false, done);
       });
 
       it('is NOT allowed access to "/brd_2/search/customer-profile/_search"', (done) => {
@@ -846,6 +876,14 @@ describe('The "account-admin" role (act_1 member)', () => {
 
       it('is NOT allowed access to "/brd_2/audiences/aud_2/snapshot-fb-exports/exp_2"', (done) => {
         testWardenResponse('update', 'rn:bridg:accounts:act_2:brands:brd_2:audiences:aud_2:snapshot-fb-exports:exp_2', c2, false, done);
+      });
+
+      it('is allowed access to "/brd_1/profile-collections/col_1"', (done) => {
+        testWardenResponse('update', 'rn:bridg:accounts:act_1:brands:brd_1:profile-collections:col_1', c1, true, done);
+      });
+
+      it('is NOT allowed access to "/brd_2/profile-collections/col_2"', (done) => {
+        testWardenResponse('update', 'rn:bridg:accounts:act_2:brands:brd_2:profile-collections:col_2', c2, false, done);
       });
 
       it('is NOT allowed access to "/brd_1/search/customer-profile/_search"', (done) => {

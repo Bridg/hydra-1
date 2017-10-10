@@ -211,6 +211,22 @@ describe('The "bridg-admin" role', () => {
         testWardenResponse('read', 'rn:bridg:accounts:act_2:brands:brd_2:insights', true, done);
       });
 
+      it('is allowed access to "/brd_1/profile-collections"', (done) => {
+        testWardenResponse('read', 'rn:bridg:accounts:act_1:brands:brd_1:profile-collections', true, done);
+      });
+
+      it('is allowed access to "/brd_2/profile-collections"', (done) => {
+        testWardenResponse('read', 'rn:bridg:accounts:act_2:brands:brd_2:profile-collections', true, done);
+      });
+
+      it('is allowed access to "/brd_1/profile-collections/col_1"', (done) => {
+        testWardenResponse('read', 'rn:bridg:accounts:act_1:brands:brd_1:profile-collections:col_1', true, done);
+      });
+
+      it('is allowed access to "/brd_2/profile-collections/col_2"', (done) => {
+        testWardenResponse('read', 'rn:bridg:accounts:act_2:brands:brd_2:profile-collections:col_2', true, done);
+      });
+
       it('is allowed access to "/brd_1/reveal-jobs"', (done) => {
         testWardenResponse('read', 'rn:bridg:accounts:act_1:brands:brd_1:reveal-jobs', true, done);
       });
@@ -309,6 +325,12 @@ describe('The "bridg-admin" role', () => {
 
       it('is NOT allowed access to "/pol_1"', (done) => {
         testWardenResponse('read', 'rn:hydra:policies:pol_1', false, done);
+      });
+    });
+
+    describe('context "/profile-collections"', () => {
+      it('is allowed access to "/profile-collections"', (done) => {
+        testWardenResponse('read', 'rn:bridg:profile-collections', true, done);
       });
     });
 
@@ -555,6 +577,14 @@ describe('The "bridg-admin" role', () => {
 
       it('is allowed access to "/brd_2/audience-export-groups', (done) => {
         testWardenResponse('create', 'rn:bridg:accounts:act_2:brands:brd_2:audience-export-groups', true, done);
+      });
+
+      it('is allowed access to "/brd_1/profile-collections"', (done) => {
+        testWardenResponse('create', 'rn:bridg:accounts:act_1:brands:brd_1:profile-collections', true, done);
+      });
+
+      it('is allowed access to "/brd_2/profile-collections"', (done) => {
+        testWardenResponse('create', 'rn:bridg:accounts:act_2:brands:brd_2:profile-collections', true, done);
       });
 
       it('is allowed access to "/brd_1/search/customer-profile/_search"', (done) => {
@@ -839,6 +869,14 @@ describe('The "bridg-admin" role', () => {
 
       it('is allowed access to "/brd_2/audience-export-groups/aeg_2"', (done) => {
         testWardenResponse('update', 'rn:bridg:accounts:act_2:brands:brd_2:audience-export-groups:aeg_2', true, done);
+      });
+
+      it('is allowed access to "/brd_1/profile-collections/col_1"', (done) => {
+        testWardenResponse('update', 'rn:bridg:accounts:act_1:brands:brd_1:profile-collections:col_1', true, done);
+      });
+
+      it('is allowed access to "/brd_2/profile-collections/col_2"', (done) => {
+        testWardenResponse('update', 'rn:bridg:accounts:act_2:brands:brd_2:profile-collections:col_2', true, done);
       });
 
       it('is NOT allowed access to "/brd_1/search/customer-profile/_search"', (done) => {
